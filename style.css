@@ -63,3 +63,18 @@ a:hover {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Styling for the list page */
+.mern-list {
+  text-align: left;
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 20px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.mern-list li {
+  list-style-type: "✅ ";
+  margin-bottom: 8px;
+}
