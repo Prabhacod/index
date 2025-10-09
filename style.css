@@ -1,4 +1,6 @@
-/* Common background */
+/* =================================== */
+/* 🌈 Common background and body style */
+/* =================================== */
 body {
   margin: 0;
   height: 100vh;
@@ -7,31 +9,40 @@ body {
   align-items: center;
   background: linear-gradient(135deg, #74ebd5, #ACB6E5);
   font-family: 'Poppins', sans-serif;
+  flex-direction: column;
 }
 
-/* Reusable glowing heading */
+/* ============================ */
+/* 💫 Reusable glowing heading  */
+/* ============================ */
 h1 {
   color: #2c3e50;
   font-size: 50px;
   margin-bottom: 15px;
   animation: glow 2s infinite alternate;
+  text-align: center;
 }
 
-/* Paragraph text */
+/* ============================ */
+/* 📝 Paragraph text styling    */
+/* ============================ */
 p {
   color: #555;
   font-size: 22px;
   margin-top: 0;
+  text-align: center;
 }
 
-
-/* For the simple first page */
+/* ============================ */
+/* 💎 Simple page layout        */
+/* ============================ */
 .simple {
   text-align: center;
-  animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Link styling */
+/* ============================ */
+/* 🔗 Link styling (basic)      */
+/* ============================ */
 a {
   display: inline-block;
   margin-top: 15px;
@@ -44,7 +55,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Animations */
+/* ============================ */
+/* ✨ Animations                */
+/* ============================ */
 @keyframes glow {
   from { text-shadow: 0 0 5px #00c3ff, 0 0 10px #00c3ff; }
   to { text-shadow: 0 0 20px #007bff, 0 0 30px #00c3ff; }
@@ -54,4 +67,60 @@ a:hover {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ============================ */
+/* 🟢 Card styling (optional)   */
+/* ============================ */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+/* ============================ */
+/* 🔵 Stylish Button Design     */
+/* ============================ */
+.button-container {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 18px;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #00c3ff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.8s ease;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #00c3ff, 0 0 30px #007bff;
+}
+
+/* Optional different colors for each button */
+.btn.next {
+  background: linear-gradient(135deg, #007bff, #00c3ff);
+}
+
+.btn.list {
+  background: linear-gradient(135deg, #28a745, #74ebd5);
+}
+
+.btn.back {
+  background: linear-gradient(135deg, #ff4d4d, #ff9999);
+}
+
 
