@@ -1,0 +1,46 @@
+/* Background gradient and font */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Card container */
+.card {
+  background: #ffffff;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Heading with animation */
+h1 {
+  color: #2c3e50;
+  font-size: 50px;
+  margin-bottom: 15px;
+  animation: glow 2s infinite alternate;
+}
+
+/* Paragraph text */
+p {
+  color: #555;
+  font-size: 22px;
+  margin-top: 0;
+}
+
+/* Keyframe animations */
+@keyframes glow {
+  from { text-shadow: 0 0 5px #00c3ff, 0 0 10px #00c3ff; }
+  to { text-shadow: 0 0 20px #007bff, 0 0 30px #00c3ff; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
