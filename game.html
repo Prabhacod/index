@@ -1,0 +1,86 @@
+<html lang="en">
+    <head>
+        <style>
+    body {
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    .choices {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    #result {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #222;
+      background: #fff;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+    </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        <div class="choices">
+         <button onclick = "play('rock')">Rock🪨</button>
+         <button onclick = "play('paper')">Paper📃</button>
+          <button onclick = "play('scissors')">Scissors✂️</button>
+        </div>
+        <div id="result">Play▶️</div>
+        <script>
+            function play(player){
+                const choices=['rock','paper','scissors'];
+                let computer=choices[Math.floor(Math.random()*3)];
+                let result = '';
+                if(player===computer){
+                    result="It's a Draw match!!🤝"
+                }
+                else if((player==='rock' && computer==='scissors')||
+                (player==='paper' && computer==='rock')||
+                (player==='scissors' && computer==='paper')){
+                        result ='You won the match!!👤🏆'
+                } 
+                else{
+                     result='Computer won the match!!💻🏆'
+                }
+                document.getElementById('result').innerHTML=result=` 👤<b>You:</b> ${player}<br>
+                 💻 <b>Computer:</b> ${computer}<br><br>
+                 <b>${result}</b>`;
+            }
+        </script>
+
+    </body>
+</html>

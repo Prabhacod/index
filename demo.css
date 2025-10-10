@@ -1,0 +1,215 @@
+:root {
+  --navy: #1f2a35;
+  --accent-blue: #2f7bff;
+  --light-gray: #e9ebee;
+  --text: #2b2f36;
+  --white: #ffffff;
+  --container: 1150px;
+}
+
+/* Reset + base styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: "Open Sans", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--white);
+}
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+a { color: inherit; text-decoration: none; }
+
+/* HEADER */
+.site-header {
+  background: var(--navy);
+  color: var(--white);
+  padding: 16px 0;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+.main-nav a {
+  color: rgba(255, 255, 255, 0.75);
+  margin-left: 22px;
+  font-size: 13px;
+  transition: color 0.15s;
+}
+.main-nav a:hover { color: #fff; }
+
+/* HERO */
+.hero {
+  background: var(--navy);
+  color: var(--white);
+  padding: 56px 0;
+}
+.hero-inner {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-left {
+  flex: 1;
+  min-width: 280px;
+}
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.hero-left h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 44px;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+.hero-sub {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+.btn.primary {
+  background: var(--accent-blue);
+  color: var(--white);
+  box-shadow: 0 4px 10px rgba(47, 123, 255, 0.18);
+}
+.image-placeholder {
+  background: #7f8790;
+  width: 100%;
+  max-width: 440px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+/* FEATURES */
+.features {
+  background: #fff;
+  padding: 48px 0 64px;
+}
+.features-title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: var(--navy);
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+.features-grid {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.feature {
+  width: 160px;
+  text-align: center;
+  font-size: 12px;
+  color: #6f757c;
+}
+.icon-blank {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 14px;
+  border-radius: 12px;
+  border: 4px solid var(--accent-blue);
+}
+
+/* QUOTE */
+.quote {
+  background: var(--light-gray);
+  padding: 64px 0;
+}
+.quote blockquote {
+  max-width: 900px;
+  margin: 0 auto;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #394149;
+  text-align: center;
+}
+.quote cite {
+  display: block;
+  margin-top: 18px;
+  font-weight: 700;
+  text-align: right;
+  color: #333;
+}
+
+/* CALL TO ACTION */
+.big-cta {
+  padding: 48px 0;
+  background: #fff;
+}
+.cta-box {
+  background: var(--accent-blue);
+  color: #fff;
+  border-radius: 8px;
+  padding: 26px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.cta-text h3 {
+  margin-bottom: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+.cta-text p {
+  margin: 0;
+  opacity: 0.95;
+  font-size: 13px;
+}
+.btn.outline {
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  background: transparent;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 18px 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 920px) {
+  .hero-inner { flex-direction: column; gap: 18px; }
+  .image-placeholder { max-width: 100%; height: 170px; }
+  .cta-box { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+@media (max-width: 480px) {
+  .hero-left h1 { font-size: 32px; }
+  .image-placeholder { height: 140px; font-size: 14px; }
+}

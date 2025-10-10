@@ -1,31 +1,100 @@
-/* =================================== */
-/* 🌈 Common background and body style */
-/* =================================== */
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   background: linear-gradient(135deg, #74ebd5, #ACB6E5);
   font-family: 'Poppins', sans-serif;
-  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* ============================ */
-/* 💫 Reusable glowing heading  */
+/* 🌟 Attractive Navigation Bar */
 /* ============================ */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  padding: 15px 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: all 0.4s ease;
+}
+
+.navbar:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+
+.navbar .logo {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ffdd00, 0 0 15px #ff007f;
+  transition: all 0.3s ease;
+}
+
+.navbar .logo:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 12px #ffdd00, 0 0 20px #ff007f, 0 0 25px #ffffff;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.4s ease;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+}
+
+.navbar .nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background: #ffdd00;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar .nav-links li a:hover::after {
+  width: 100%;
+}
+
+.navbar .nav-links li a:hover {
+  transform: scale(1.1) translateY(-2px);
+  color: #ffdd00;
+  box-shadow: 0 4px 15px rgba(255,221,0,0.6), 0 0 10px rgba(255,0,127,0.5);
+}
+
+/* ============================ */
+/* 💫 Heading and Paragraph */
 h1 {
   color: #2c3e50;
   font-size: 50px;
   margin-bottom: 15px;
   animation: glow 2s infinite alternate;
-  text-align: center;
 }
 
-/* ============================ */
-/* 📝 Paragraph text styling    */
-/* ============================ */
 p {
   color: #555;
   font-size: 22px;
@@ -34,30 +103,7 @@ p {
 }
 
 /* ============================ */
-/* 💎 Simple page layout        */
-/* ============================ */
-.simple {
-  text-align: center;
-}
-
-/* ============================ */
-/* 🔗 Link styling (basic)      */
-/* ============================ */
-a {
-  display: inline-block;
-  margin-top: 15px;
-  color: #007bff;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* ============================ */
-/* ✨ Animations                */
-/* ============================ */
+/* ✨ Animations */
 @keyframes glow {
   from { text-shadow: 0 0 5px #00c3ff, 0 0 10px #00c3ff; }
   to { text-shadow: 0 0 20px #007bff, 0 0 30px #00c3ff; }
@@ -69,40 +115,25 @@ a:hover {
 }
 
 /* ============================ */
-/* 🟢 Card styling (optional)   */
-/* ============================ */
-.card {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 40px 50px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  animation: fadeIn 1s ease;
-}
-
-/* ============================ */
-/* 🔵 Stylish Button Design     */
-/* ============================ */
+/* 🔵 Stylish Button Design */
 .button-container {
-  margin-top: 25px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .btn {
-  display: inline-block;
   padding: 12px 25px;
-  margin: 10px;
   font-size: 18px;
   color: #fff;
   background: linear-gradient(135deg, #007bff, #00c3ff);
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(0,123,255,0.3);
   transition: all 0.3s ease;
-  animation: fadeIn 0.8s ease;
 }
 
 .btn:hover {
@@ -110,17 +141,45 @@ a:hover {
   box-shadow: 0 0 15px #00c3ff, 0 0 30px #007bff;
 }
 
-/* Optional different colors for each button */
-.btn.next {
-  background: linear-gradient(135deg, #007bff, #00c3ff);
+/* ============================ */
+/* 🟡 List Styling */
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.btn.list {
-  background: linear-gradient(135deg, #28a745, #74ebd5);
+ul li::before {
+  content: "•";
+  color: #007bff;
+  margin-right: 8px;
 }
 
-.btn.back {
-  background: linear-gradient(135deg, #ff4d4d, #ff9999);
+/* ============================ */
+/* 🟢 Box Model */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
 }
 
+.box {
+  flex: 1 1 250px;
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
 
+/* ============================ */
+/* 📱 Responsive */
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
