@@ -6,6 +6,8 @@ import Home from './pages/Home.jsx'
 import Contact from './pages/Contact.jsx'
 import Services from './pages/Services.jsx'
 import Navbar from './components/Navbar.jsx'
+import State from './hooks/State.jsx'
+
 const App = () => {
   return (
    <>
@@ -15,7 +17,7 @@ const App = () => {
     <Route path='/about' element={<About/>} />
     <Route path='/contact' element={<Contact/>} />
     <Route path='/services' element={<Services/>} />
-
+    <Route path='/state' element={<State/>} />
     
   </Routes>
 
